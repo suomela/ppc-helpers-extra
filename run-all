@@ -1,0 +1,12 @@
+#!/bin/sh
+
+parallel -i -j100 $HOME/ppc-helpers-extra/myssh-timeout {} 'o="$('"$*"' 2>&1 | tr "\n" " ")"; printf "%-13s %s\n" "{}" "$o"' -- \
+  albatrossi broileri dodo drontti emu fasaani flamingo iibis kakadu \
+  kalkkuna karakara kasuaari kiuru kiwi kolibri kondori kookaburra \
+  koskelo kuikka lunni moa pelikaani piekana pulu ruokki sorsa strutsi \
+  suula tavi tukaani undulaatti akaatti akvamariini ametisti baryytti \
+  berylli dioptaasi fluoriitti granaatti hypersteeni jade jaspis karneoli \
+  korundi kuukivi lapislatsuli malakiitti meripihka opaali peridootti \
+  rubiini safiiri sitriini smaragdi spektroliitti spinelli timantti \
+  topaasi turkoosi turmaliini vuorikide zirkoni \
+  | sort -k1.14
